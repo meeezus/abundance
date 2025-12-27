@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musha Shugyo | Zen Warrior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zen: {
+                paper: '#F9F7F2',     // Main background (Rice paper)
+                wash: '#EFECE4',      // Secondary background (Wet paper)
+                ink: '#2A2A2A',       // Main text (Sumi ink)
+                mist: '#8C8C8C',      // Secondary text (Gray)
+                stone: '#E5E2D9',     // Borders
+                red: '#BC3908',       // Cinnabar (Stamp color)
+                redWash: '#F4EBE8',   // Light red background
+                tea: '#D4C5A9',       // Subtle accent
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Shippori Mincho', 'serif'],
+              display: ['Shippori Mincho', 'serif']
+            },
+            animation: {
+              'breathe': 'breathe 4s ease-in-out infinite',
+            },
+            keyframes: {
+              breathe: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                '50%': { transform: 'scale(1.02)', opacity: '0.9' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #F9F7F2;
+        color: #2A2A2A;
+        font-family: 'Shippori Mincho', serif; /* Default to serif for that scroll feel */
+      }
+      .font-ui {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Subtle noise texture for paper feel */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 50;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F9F7F2; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D4C5A9; 
+        border-radius: 3px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
